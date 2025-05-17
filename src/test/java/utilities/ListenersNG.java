@@ -64,7 +64,7 @@ public class ListenersNG extends BaseClass implements ITestListener {
 //        } catch (Exception e) {
 //            throw new RuntimeException(e);
 //        }
-        String filepath = null;
+        String filepath;
         try {
             filepath = getScreenshot(result.getMethod().getMethodName(), driver);
         } catch (IOException e) {
