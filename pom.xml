@@ -1,0 +1,175 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.tcs.Sunil</groupId>
+	<artifactId>AparnaKT</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>AparnaKT</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<seleniumVersion>4.32.0</seleniumVersion>
+		<testNGVersion>7.11.0</testNGVersion>
+		<extentreportsVersion>5.1.2</extentreportsVersion>
+		<cucumberVersion>7.22.1</cucumberVersion>
+		<slf4j-apiVersion>2.1.0-alpha1</slf4j-apiVersion>
+		<lombokVersion>1.18.38</lombokVersion>
+		<allure-testngVersion>2.29.1</allure-testngVersion>
+		<extent-pdf-reportVersion>2.12.0</extent-pdf-reportVersion>
+		<commons-ioVersion>2.19.0</commons-ioVersion>
+		<log4jVersion>3.0.0-beta3</log4jVersion>
+		<log4j-apiVersion>3.0.0-beta2</log4j-apiVersion>
+		<aspectjweaverVersion>1.9.24</aspectjweaverVersion>
+		<maven-surefire-pluginVersion>3.5.3</maven-surefire-pluginVersion>
+		<maven-cucumber-reportingVersion>5.8.5</maven-cucumber-reportingVersion>
+
+	</properties>
+
+	<dependencies>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>${seleniumVersion}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>${testNGVersion}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j-apiVersion}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>${slf4j-apiVersion}</version>
+			<scope>test</scope>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/tech.grasshopper/extent-pdf-report -->
+		<dependency>
+			<groupId>tech.grasshopper</groupId>
+			<artifactId>extent-pdf-report</artifactId>
+			<version>${extent-pdf-reportVersion}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commons-ioVersion}</version>
+		</dependency>
+
+		<!--
+		https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>${log4j-apiVersion}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>${log4jVersion}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombokVersion}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>${extentreportsVersion}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>${cucumberVersion}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-testng</artifactId>
+			<version>${cucumberVersion}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-testng</artifactId>
+			<version>${allure-testngVersion}</version>
+			<scope>test</scope>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/net.masterthought/maven-cucumber-reporting -->
+		<dependency>
+			<groupId>net.masterthought</groupId>
+			<artifactId>maven-cucumber-reporting</artifactId>
+			<version>${maven-cucumber-reportingVersion}</version>
+		</dependency>
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>io.qameta.allure</groupId>
+				<artifactId>allure-bom</artifactId>
+				<version>${allure.version}</version>
+				<type>pom</type>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven-surefire-pluginVersion}</version>
+				<configuration>
+					<includes>
+						<include>**/*Test.java</include>
+					</includes>
+					<properties>
+						<property>
+							<name>listener</name>
+							<value>io.qameta.allure.testng.AllureTestNg</value>
+						</property>
+					</properties>
+					<argLine>
+						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectjweaverVersion}/aspectjweaver-${aspectjweaverVersion}.jar"
+					</argLine>
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+
+			</plugin>
+			<plugin>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjweaver</artifactId>
+				<version>${aspectjweaverVersion}</version>
+			</plugin>
+		</plugins>
+	</build>
+</project>
