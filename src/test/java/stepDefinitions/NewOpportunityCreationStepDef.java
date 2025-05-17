@@ -15,7 +15,7 @@ public class NewOpportunityCreationStepDef extends BaseClass {
         public void login() throws InterruptedException {
         LoginPage lp = new LoginPage(driver);
         lp.login(username,password);
-        Thread.sleep(5000);
+        Thread.sleep(8000);
 
         }
     @Then("^I am logged in successfully$")
