@@ -4,7 +4,7 @@ import org.testng.Assert;
 import pages.BaseClass;
 import pages.LoginPage;
 
-public class NewOpportunityCreationStepDef extends BaseClass {
+public class LoginStepDef extends BaseClass {
 
     @Given ("^I am on the login page$")
     public void launchBrowser(){

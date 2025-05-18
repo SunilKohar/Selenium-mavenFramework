@@ -55,4 +55,13 @@ public class ReadConfig {
             throw new RuntimeException("password is not specified in the config file. Please specify it.");
         }
     }
+    public String getOppName() {
+        String oppname= properties.getProperty("opportunityName");
+        if(oppname !=null) {
+            return oppname;
+        }
+        else {
+            throw new RuntimeException("opportunity Name is not specified in the config file. Please specify it.");
+        }
+    }
 }

@@ -23,17 +23,17 @@ public class LoginPage extends BaseClass{
     @FindBy(how= How.NAME, using = "Login")
     WebElement btnLogin;
 
-    @FindBy(how= How.NAME, using = "rememberUn")
-    WebElement chkRememberMe;
-
-    @FindBy(how= How.ID, using = "forgot_password_link")
-    WebElement lnkForgotPwd;
-
-    @FindBy(how = How.ID, using = "mydomainLink")
-    WebElement lnkMyDomainName;
-
-    @FindBy(how = How.ID, using = "gidr-email-log-in-button")
-    WebElement lnkEmailLogin;
+//    @FindBy(how= How.NAME, using = "rememberUn")
+//    WebElement chkRememberMe;
+//
+//    @FindBy(how= How.ID, using = "forgot_password_link")
+//    WebElement lnkForgotPwd;
+//
+//    @FindBy(how = How.ID, using = "mydomainLink")
+//    WebElement lnkMyDomainName;
+//
+//    @FindBy(how = How.ID, using = "gidr-email-log-in-button")
+//    WebElement lnkEmailLogin;
 
     public void login(String username, String password){
         txtUserName.clear();

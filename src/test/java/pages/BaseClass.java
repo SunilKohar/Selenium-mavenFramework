@@ -21,6 +21,7 @@ public class BaseClass {
     String browser = rc.getBrowser();
     public String username = rc.getUserName();
     public String password = rc.getPassword();
+    public String oppName = rc.getOppName();
 
     public static WebDriver driver;
     public static Logger logger;
@@ -55,8 +56,10 @@ public class BaseClass {
                 throw new IllegalArgumentException("Unexpected value of the browser in config file.: " + browser);
         }
         driver.manage().window().maximize();
+        logger.info("Browser maximised");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get(url);
+        logger.info("URL entered");
     }
     @AfterTest
     public void tearDown() {
